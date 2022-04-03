@@ -39,7 +39,7 @@ export class ShareComponent implements OnInit {
     const downasaurBlob = await lastValueFrom(
       this._http.get('./assets/downasaur.svg', { responseType: 'blob' })
     );
-    const downasaurFile = new File([downasaurBlob], './assets/downasaur.svg');
+    const downasaurFile = new File([downasaurBlob], 'downasaur.svg', { type: 'image/svg+xml' });
     this.shareableContent.push({
       src: './assets/downasaur.svg',
       title: 'Downasaur',
