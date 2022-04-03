@@ -1,0 +1,9 @@
+<ion-item (click)="call()">
+  <ion-avatar *ngIf="src" slot="start">
+    <img [src]="src" [alt]="name" />
+  </ion-avatar>
+  <ion-label>
+    <h2>{{name}}</h2>
+    <p *ngIf="tel">{{tel}}</p>
+  </ion-label>
+</ion-item>

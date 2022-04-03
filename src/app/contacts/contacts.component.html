@@ -1,0 +1,19 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Contacts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" *ngIf="!contacts; else contactsList">
+  <ion-button expand="block" (click)="getContacts()">
+    Access Contacts
+  </ion-button>
+</ion-content>
+
+<ng-template #contactsList>
+  <ion-content fullscreen class="ion-padding">
+    <ion-list>
+      <pwa-contact *ngFor="let contact of contacts" [contact]="contact"></pwa-contact>
+    </ion-list>
+  </ion-content>
+</ng-template>

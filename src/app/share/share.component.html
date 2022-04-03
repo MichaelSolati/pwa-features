@@ -1,0 +1,23 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Share</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-card *ngFor="let content of shareableContent">
+    <div class="ion-card--img" [style.background-image]="'url('+content.src+')'"></div>
+    <ion-card-header>
+      <ion-card-title>{{content.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{content.text}}
+    </ion-card-content>
+    <ion-item>
+      <ion-button fill="none" slot="end" (click)="share(content)">
+        <ion-icon name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>
